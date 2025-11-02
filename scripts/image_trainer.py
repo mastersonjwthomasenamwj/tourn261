@@ -46,19 +46,19 @@ def get_image_training_config_template_path(model_name: str, model_type: str, tr
 
         if styles:
             try:
-                config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/base_diffusion_sdxl_style_{styles[0][0].split(' ', 1)[0].lower()}.toml"
+                config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/archives/base_diffusion_sdxl_style_{styles[0][0].split(' ', 1)[0].lower()}.toml"
                 print(f"config_file0: {config_file}")
                 if os.path.exists(config_file):
                     print(f"Config: {config_file}")
                     return config_file, True
                 else:
-                    config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/base_diffusion_sdxl_style_{styles[1][0].split(' ', 1)[0].lower()}.toml"
+                    config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/archives/base_diffusion_sdxl_style_{styles[1][0].split(' ', 1)[0].lower()}.toml"
                     print(f"config_file1: {config_file}")
                     if os.path.exists(config_file):
                         print(f"Config: {config_file}")
                         return config_file, True
                     else:
-                        config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/base_diffusion_sdxl_style_{styles[2][0].split(' ', 1)[0].lower()}.toml"
+                        config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/archives/base_diffusion_sdxl_style_{styles[2][0].split(' ', 1)[0].lower()}.toml"
                         print(f"config_file2: {config_file}")
                         if os.path.exists(config_file):
                             print(f"Config: {config_file}")
@@ -71,13 +71,13 @@ def get_image_training_config_template_path(model_name: str, model_type: str, tr
                 return str(Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH) / "base_diffusion_sdxl_style.toml"), True
 
         else:
-            config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/base_diffusion_sdxl_person_{model_name.split('/', 1)[1]}.toml"
+            config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/archives/base_diffusion_sdxl_person_{model_name.split('/', 1)[1]}.toml"
             print(f"config_file_person1: {config_file}")
             if os.path.exists(config_file):
                 print(f"Config: {config_file}")
                 return config_file, True
             else:
-                config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/base_diffusion_sdxl_person_{model_name.split('/', 1)[0]}.toml"
+                config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/archives/base_diffusion_sdxl_person_{model_name.split('/', 1)[0]}.toml"
                 print(f"config_file_person0: {config_file}")
                 if os.path.exists(config_file):
                     print(f"Config: {config_file}")
@@ -87,13 +87,13 @@ def get_image_training_config_template_path(model_name: str, model_type: str, tr
                     return str(Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH) / "base_diffusion_sdxl_person.toml"), False
 
     elif model_type == ImageModelType.FLUX.value:
-            config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/base_diffusion_flux_{model_name.split('/', 1)[1]}.toml"
+            config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/archives/base_diffusion_flux_{model_name.split('/', 1)[1]}.toml"
             print(f"config_file_flux1: {config_file}")
             if os.path.exists(config_file):
                 print(f"Config: {config_file}")
                 return config_file, True
             else:
-                config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/base_diffusion_flux_{model_name.split('/', 1)[0]}.toml"
+                config_file = f"{Path(train_cst.IMAGE_CONTAINER_CONFIG_TEMPLATE_PATH)}/archives/base_diffusion_flux_{model_name.split('/', 1)[0]}.toml"
                 print(f"config_file_flux0: {config_file}")
                 if os.path.exists(config_file):
                     print(f"Config: {config_file}")
